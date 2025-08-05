@@ -108,6 +108,19 @@ void delete_todo(const char *filename) {
     }
 }
 
+void exit_without_saving() {
+    char confirm;
+    printf("Are you sure you want to exit without saving? (y/n): ");
+    getchar(); // clear newline
+    scanf("%c", &confirm);
+    if (confirm == 'y' || confirm == 'Y') {
+        printf("Exiting without saving changes.\n");
+        exit(0);
+    } else {
+        printf("Returning to menu.\n");
+    }
+}
+
 int main() {
     int choice;
     const char *filename = ".stlm_tasks";
@@ -115,7 +128,7 @@ int main() {
 
     while (1) {
         printf("\n--- Simple Todo List Manager ---\n");
-        printf("1. Add task\n2. List tasks\n3. Mark task as done\n4. Remove task\n5. Save and exit\n6. Delete todo file\n");
+        printf("1. Add task\n2. List tasks\n3. Mark task as done\n4. Remove task\n5. Save and exit\n6. Delete todo file\n7. Exit without saving\n");
         printf("Choose: ");
         scanf("%d", &choice);
 
@@ -126,6 +139,7 @@ int main() {
             case 4: remove_task(); break;
             case 5: save_tasks(filename); return 0;
             case 6: delete_todo(filename); break;
+            case 7: exit_without_saving(); break;
             default: printf("Invalid option.\n");
         }
     }
