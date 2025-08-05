@@ -15,4 +15,6 @@ STLM is a simple command-line Todo List Manager. It allows users to add, remove,
 3. Mark task as done.
 4. Remove task.
 5. Save and exit.
-6. Delete todo.txt file.
+6. Delete todo histoty file.
+### DISCLAIMER
+This project is licensed under the **GNU General Public License v3.0**. Please see the LICENSE file for more information.

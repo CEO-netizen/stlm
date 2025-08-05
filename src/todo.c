@@ -110,7 +110,7 @@ void delete_todo(const char *filename) {
 
 int main() {
     int choice;
-    const char *filename = "todo.txt";
+    const char *filename = ".stlm_tasks";
     load_tasks(filename);
 
     while (1) {
